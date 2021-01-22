@@ -1,0 +1,21 @@
+.form-group {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  input {
+    margin: 10px 0;
+    border: lightcoral;
+  }
+  button,
+  input {
+    &.focus {
+      outline: none;
+    }
+  }
+  .response {
+    padding-top: 5px;
+    height: 20px;
+  }
+}

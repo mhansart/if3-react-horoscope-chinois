@@ -1,0 +1,15 @@
+.one-modal {
+  visibility: hidden;
+
+  .content {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 500px;
+  }
+}
+.close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
