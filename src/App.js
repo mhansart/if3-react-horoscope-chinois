@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Animals from './components/Animals';
+import Animals from './components/animals/Animals';
 import FormControl from './components/formControl/FormControl';
 import './App.scss';
 import signes from './components/signes';

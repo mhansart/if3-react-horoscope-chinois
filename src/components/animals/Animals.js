@@ -1,5 +1,5 @@
 import './Animals.scss';
-import truncature from '../functions/string';
+import truncature from '../../functions/string';
 
 function Animals({
   desc, no, image, handler, color,
