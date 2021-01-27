@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import Animals from './components/Animals';
-import FormControl from './components/FormControl';
+import FormControl from './components/formControl/FormControl';
 import './App.scss';
 import signes from './components/signes';
-import Modal from './components/Modal';
+import Modal from './components/modal/Modal';
+// import Test from './components/Test';
 
 function App() {
   const [openModal, setOpenModal] = useState(false);
@@ -23,6 +24,7 @@ function App() {
   };
   return (
     <div>
+      {/* <Test /> */}
       <Modal content={modalContent} visible={openModal} handler={toggleModal} />
       <FormControl setColor={setColor} />
       <div className="px-5 App grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-4">

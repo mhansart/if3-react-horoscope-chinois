@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
-import signes from './signes';
-import element from './element';
+import signes from '../signes';
+import element from '../element';
 import './FormControl.scss';
 
 const FormControl = ({ setColor }) => {
