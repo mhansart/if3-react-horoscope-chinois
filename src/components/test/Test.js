@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import rand from '../../functions/math';
 
 function Test() {
   const padding = '15px';
@@ -12,8 +13,7 @@ function Test() {
   const [animal, setAnimal] = useState(animals[0]);
 
   const changeAnimals = () => {
-    const idx = Math.floor((Math.random() * animals.length));
-    setAnimal(animals[idx]);
+    setAnimal(rand(animals));
   };
   return (
     <div>
