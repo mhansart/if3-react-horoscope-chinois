@@ -9,7 +9,7 @@ import Modal from './components/modal/Modal';
 function App() {
   const [openModal, setOpenModal] = useState(false);
   const [modalContent, setModalContent] = useState({ title: '', description: '' });
-  const [colorId, setColor] = useState(null);
+  const [colorId, setColorId] = useState(null);
 
   const toggleModal = (e) => {
     e.preventDefault();
@@ -26,7 +26,7 @@ function App() {
     <div>
       {/* <Test /> */}
       <Modal content={modalContent} visible={openModal} handler={toggleModal} />
-      <FormControl setColor={setColor} />
+      <FormControl setColor={setColorId} />
       <div className="px-5 App grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-4">
         {signes.map(({
           nom, description, img, id,
