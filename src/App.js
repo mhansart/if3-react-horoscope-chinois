@@ -4,6 +4,7 @@ import FormControl from './components/formControl/FormControl';
 import './App.scss';
 import signes from './components/signes';
 import Modal from './components/modal/Modal';
+import Drapeaux from './components/drapeaux/Drapeaux';
 // import Test from './components/test/Test';
 
 function App() {
@@ -24,8 +25,9 @@ function App() {
   };
   return (
     <div>
+      <Drapeaux />
       {/* <Test /> */}
-      <Modal content={modalContent} visible={openModal} handler={toggleModal} />
+      {/* <Modal content={modalContent} visible={openModal} handler={toggleModal} />
       <FormControl setColor={setColorId} />
       <div className="px-5 App grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-4">
         {signes.map(({
@@ -34,7 +36,7 @@ function App() {
           const color = Number(id) === colorId ? 'bg-red-300' : 'bg-white';
           return <Animals desc={description} color={color} no={nom} image={img} key={id} handler={toggleModal} />;
         })}
-      </div>
+      </div> */}
     </div>
   );
 }
