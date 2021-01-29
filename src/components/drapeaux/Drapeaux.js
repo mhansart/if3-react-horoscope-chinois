@@ -3,26 +3,25 @@ import Button from '../button/Button';
 import './Drapeaux.scss';
 
 function Drapeaux() {
-  const [medalsBe, setMedalsBe] = useState(0);
-  const [medalsFr, setMedalsFr] = useState(0);
-  const [medalsCo, setMedalsCo] = useState(0);
-  const [medalsUs, setMedalsUs] = useState(0);
-  const [medalsLa, setMedalsLa] = useState(0);
+  const [medalsCountry, setMedalsCountry] = useState({
+    Belgique: 0, France: 0, Coree: 0, USA: 0, Laos: 0,
+  });
+
   const countries = [
     {
-      country: 'Belgique', flag: '🇧🇪', id: 0, medals: medalsBe,
+      country: 'Belgique', flag: '🇧🇪', id: 0, medals: medalsCountry.Belgique,
     },
     {
-      country: 'France', flag: '🇫🇷', id: 1, medals: medalsFr,
+      country: 'France', flag: '🇫🇷', id: 1, medals: medalsCountry.France,
     },
     {
-      country: 'Corée', flag: '🇰🇵', id: 2, medals: medalsCo,
+      country: 'Coree', flag: '🇰🇵', id: 2, medals: medalsCountry.Coree,
     },
     {
-      country: 'USA', flag: '🇺🇸', id: 3, medals: medalsUs,
+      country: 'USA', flag: '🇺🇸', id: 3, medals: medalsCountry.USA,
     },
     {
-      country: 'Laos', flag: '🇱🇦', id: 4, medals: medalsLa,
+      country: 'Laos', flag: '🇱🇦', id: 4, medals: medalsCountry.Laos,
     },
   ];
   const winners = [...countries];
@@ -57,21 +56,8 @@ function Drapeaux() {
   const winnersCountry = findWinner();
 
   const moreMedals = (e) => {
-    if (e.target.innerHTML === '🇧🇪') {
-      setMedalsBe(medalsBe + 1);
-    }
-    if (e.target.innerHTML === '🇫🇷') {
-      setMedalsFr(medalsFr + 1);
-    }
-    if (e.target.innerHTML === '🇰🇵') {
-      setMedalsCo(medalsCo + 1);
-    }
-    if (e.target.innerHTML === '🇺🇸') {
-      setMedalsUs(medalsUs + 1);
-    }
-    if (e.target.innerHTML === '🇱🇦') {
-      setMedalsLa(medalsLa + 1);
-    }
+    const { name, value } = e.target;
+    setMedalsCountry((prev) => ({ ...prev, [name]: Number(value) + 1 }));
   };
   return (
     <div>
@@ -86,7 +72,9 @@ function Drapeaux() {
             {countries.map(({ medals }) => <td>{medals}</td>)}
           </tr>
           <tr>
-            {countries.map(({ flag, id }) => <td><Button key={id} content={flag} handler={moreMedals} /></td>)}
+            {countries.map(({
+              country, flag, id, medals,
+            }) => <td><Button key={id} value={medals} content={flag} name={country} handler={moreMedals} /></td>)}
           </tr>
         </tbody>
       </table>

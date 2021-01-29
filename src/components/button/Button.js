@@ -1,6 +1,8 @@
-function Button({ content, handler }) {
+function Button({
+  content, handler, name, value,
+}) {
   return (
-    <button onClick={handler}>
+    <button name={name} value={value} onClick={handler}>
       {content}
     </button>
   );
