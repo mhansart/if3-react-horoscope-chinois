@@ -10,11 +10,12 @@ function Budget({
     depense3: 0,
     depense4: 0,
   });
+  const allDepenses = [Number(inputs.depense1), Number(inputs.depense2), Number(inputs.depense3), Number(inputs.depense4)];
   const salaire = useRef();
   const [montant, setMontant] = useState(0);
   const btn = useRef();
   const [face, setFace] = useState('😐');
-  const text = Number(montant) - (Number(inputs.depense1) + Number(inputs.depense2) + Number(inputs.depense3) + Number(inputs.depense4));
+  const text = Number(montant) - (allDepenses.reduce((a, b) => a + b, 0));
   useEffect(() => {
     if (text > 0) {
       setFace('😀');
