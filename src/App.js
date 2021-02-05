@@ -5,6 +5,7 @@ import './App.scss';
 import signes from './components/signes';
 import Modal from './components/modal/Modal';
 import Drapeaux from './components/drapeaux/Drapeaux';
+import Budget from './components/budget/Budget';
 // import Test from './components/test/Test';
 
 function App() {
@@ -25,7 +26,8 @@ function App() {
   };
   return (
     <div>
-      <Drapeaux />
+      <Budget depense1="sortie" depense2="charges" depense3="courses" depense4="loyer" />
+      {/* <Drapeaux /> */}
       {/* <Test /> */}
       {/* <Modal content={modalContent} visible={openModal} handler={toggleModal} />
       <FormControl setColor={setColorId} />
